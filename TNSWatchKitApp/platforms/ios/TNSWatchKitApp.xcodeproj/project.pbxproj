@@ -42,6 +42,12 @@
 		F90631471B04B4B400B50CED /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F90631451B04B4B400B50CED /* Interface.storyboard */; };
 		F90631491B04B4B400B50CED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F90631481B04B4B400B50CED /* Images.xcassets */; };
 		F906314C1B04B4B400B50CED /* TNSWatchKitApp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F906312C1B04B4B400B50CED /* TNSWatchKitApp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F90631551B04D2F500B50CED /* NativeScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F90631541B04D2F500B50CED /* NativeScript.framework */; };
+		F90631561B04D2F500B50CED /* NativeScript.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F90631541B04D2F500B50CED /* NativeScript.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F90631581B04D30000B50CED /* NativeScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F90631541B04D2F500B50CED /* NativeScript.framework */; };
+		F90631591B04D30000B50CED /* NativeScript.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F90631541B04D2F500B50CED /* NativeScript.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F906315D1B04D68A00B50CED /* app in Resources */ = {isa = PBXBuildFile; fileRef = F906315C1B04D68A00B50CED /* app */; };
+		F90631601B04DC9300B50CED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F906315E1B04D79000B50CED /* main.m */; };
 		F9161D911993C00300F9E5FD /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F9161D901993C00300F9E5FD /* libc++.dylib */; };
 		F9161D931993C00B00F9E5FD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F9161D921993C00B00F9E5FD /* libz.dylib */; };
 		F9161D951993C01600F9E5FD /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F9161D941993C01600F9E5FD /* libicucore.dylib */; };
@@ -73,6 +79,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				F90631591B04D30000B50CED /* NativeScript.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +93,17 @@
 				F906314C1B04B4B400B50CED /* TNSWatchKitApp WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F90631571B04D2F500B50CED /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F90631561B04D2F500B50CED /* NativeScript.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -137,6 +155,9 @@
 		F90631441B04B4B400B50CED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F90631461B04B4B400B50CED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		F90631481B04B4B400B50CED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F90631541B04D2F500B50CED /* NativeScript.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NativeScript.framework; path = ../../deps/NativeScript.framework; sourceTree = "<group>"; };
+		F906315C1B04D68A00B50CED /* app */ = {isa = PBXFileReference; lastKnownFileType = folder; name = app; path = "TNSWatchKitApp WatchKit App/app"; sourceTree = SOURCE_ROOT; };
+		F906315E1B04D79000B50CED /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "TNSWatchKitApp WatchKit Extension/main.m"; sourceTree = SOURCE_ROOT; };
 		F9161D901993C00300F9E5FD /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		F9161D921993C00B00F9E5FD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F9161D941993C01600F9E5FD /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
@@ -150,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9161D951993C01600F9E5FD /* libicucore.dylib in Frameworks */,
+				F90631581B04D30000B50CED /* NativeScript.framework in Frameworks */,
 				F9161D931993C00B00F9E5FD /* libz.dylib in Frameworks */,
 				F9161D911993C00300F9E5FD /* libc++.dylib in Frameworks */,
 				F9411C5B1993BE3A000B92E2 /* NativeScript.framework in Frameworks */,
@@ -162,6 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F90631551B04D2F500B50CED /* NativeScript.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,11 +194,12 @@
 		858B832518CA111C00AB12DE = {
 			isa = PBXGroup;
 			children = (
+				F90631541B04D2F500B50CED /* NativeScript.framework */,
 				858B833718CA111C00AB12DE /* TNSWatchKitApp */,
 				F906312D1B04B4B400B50CED /* TNSWatchKitApp WatchKit Extension */,
 				F90631421B04B4B400B50CED /* TNSWatchKitApp WatchKit App */,
-				858B833018CA111C00AB12DE /* Frameworks */,
 				858B832F18CA111C00AB12DE /* Products */,
+				858B833018CA111C00AB12DE /* Frameworks */,
 				E0B20F4F19A3312900D531CF /* Default-568h@2x.png */,
 				E0B20F5019A3312900D531CF /* Default-Landscape.png */,
 				E0B20F5119A3312900D531CF /* Default-Landscape@2x.png */,
@@ -250,6 +274,7 @@
 		F906312D1B04B4B400B50CED /* TNSWatchKitApp WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				F906315C1B04D68A00B50CED /* app */,
 				F90631311B04B4B400B50CED /* InterfaceController.h */,
 				F90631321B04B4B400B50CED /* InterfaceController.m */,
 				F90631341B04B4B400B50CED /* NotificationController.h */,
@@ -267,6 +292,7 @@
 			children = (
 				F906312F1B04B4B400B50CED /* Info.plist */,
 				F90631301B04B4B400B50CED /* PushNotificationPayload.apns */,
+				F906315E1B04D79000B50CED /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -321,6 +347,8 @@
 				F90631281B04B4B400B50CED /* Sources */,
 				F90631291B04B4B400B50CED /* Frameworks */,
 				F906312A1B04B4B400B50CED /* Resources */,
+				F90631571B04D2F500B50CED /* Embed Frameworks */,
+				F906315A1B04D47D00B50CED /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -422,6 +450,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F906315D1B04D68A00B50CED /* app in Resources */,
 				F906313B1B04B4B400B50CED /* Images.xcassets in Resources */,
 				F906313F1B04B4B400B50CED /* TNSWatchKitApp WatchKit App.app in Resources */,
 			);
@@ -466,6 +495,19 @@
 			shellPath = /bin/sh;
 			shellScript = "if [ -d \"$SRCROOT/$PROJECT_NAME/tns_modules\" ]\nthen\n    cp -rp \"$SRCROOT/$PROJECT_NAME/tns_modules\" \"$BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH\"\nfi";
 		};
+		F906315A1B04D47D00B50CED /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "pushd \"$SRCROOT/metadataGenerator/bin\"\n./metadata-generation-build-step.sh\npopd";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -483,6 +525,7 @@
 			files = (
 				F90631361B04B4B400B50CED /* NotificationController.m in Sources */,
 				F90631331B04B4B400B50CED /* InterfaceController.m in Sources */,
+				F90631601B04DC9300B50CED /* main.m in Sources */,
 				F90631391B04B4B400B50CED /* GlanceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -614,7 +657,8 @@
 				CLANG_MODULES_AUTOLINK = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(PROJECT_DIR)\"",
+					"$(PROJECT_DIR)",
+					"/Users/cankov/GitRoot/NativeScript/sample-iOS-WatchKit/TNSWatchKitApp/deps",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TNSWatchKitApp/TNSWatchKitApp-Prefix.pch";
@@ -645,7 +689,8 @@
 				CLANG_MODULES_AUTOLINK = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(PROJECT_DIR)\"",
+					"$(PROJECT_DIR)",
+					"/Users/cankov/GitRoot/NativeScript/sample-iOS-WatchKit/TNSWatchKitApp/deps",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TNSWatchKitApp/TNSWatchKitApp-Prefix.pch";
@@ -664,6 +709,10 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/cankov/GitRoot/NativeScript/sample-iOS-WatchKit/TNSWatchKitApp/deps",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -686,6 +735,10 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/cankov/GitRoot/NativeScript/sample-iOS-WatchKit/TNSWatchKitApp/deps",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				INFOPLIST_FILE = "TNSWatchKitApp WatchKit Extension/Info.plist";
@@ -770,6 +823,7 @@
 				F90631501B04B4B400B50CED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F90631521B04B4B400B50CED /* Build configuration list for PBXNativeTarget "TNSWatchKitApp WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -778,6 +832,7 @@
 				F906314E1B04B4B400B50CED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

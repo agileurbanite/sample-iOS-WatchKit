@@ -8,11 +8,9 @@
 
 #import "InterfaceController.h"
 
-
 @interface InterfaceController()
 
 @end
-
 
 @implementation InterfaceController
 
