@@ -1,5 +1,5 @@
 # TNS WatchKit App
-This is an example with NativeScript for iOS and the WatchKit APIs.
+This is a **proof of concept** app with NativeScript for iOS and the WatchKit APIs.
 
 ## Walkthrough
 To set up a project:
