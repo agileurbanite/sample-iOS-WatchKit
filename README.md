@@ -68,7 +68,7 @@ popd
 Check if the app is running.
 
 ### Bootstrap the NativeScript in the Extension
-Go to the `TNSWatchKitApp/platforms/ios/TNSWatchKitApp WatchKit App` folder and create `app` folder with `app.js` inside:
+Go to the `TNSWatchKitApp/platforms/ios/TNSWatchKitApp WatchKit App` folder and create `app` folder with `bootstrap.js` inside:
 ```bash
 .
 ├── Base.lproj
@@ -87,46 +87,121 @@ And add the `app` folder to the _TNSWatchKitApp WatchKit Extension_ as reference
 
 You also need to add a `main.m` file in `TNSWatchKitApp WatchKit Extension/Supporting Files` to bootstrap the runtime.
 ``` Objective-C
-#include <NativeScript/NativeScript.h>
+#import <WatchKit/WatchKit.h>
+#import <NativeScript/NativeScript.h>
 
 static TNSRuntime* runtime;
 
-int main() {
+__attribute__((constructor))
+void initialize() {
     runtime = [[TNSRuntime alloc] initWithApplicationPath:[NSBundle mainBundle].bundlePath];
     TNSRuntimeInspector.logsToSystemConsole = YES;
     [runtime executeModule:@"./"];
-    return 0;
 }
 ```
 
 If you run the 'TNSWathcKitApp WatchKit App` now the bootstrap.js will execute printing "Hello World!" in the console.
 
 ### Implementing the Controllers using NativeScript
-The next step will be to implement the controllers in app.js:
- - InterfaceController.m
- - NotificationController.m
- - GlanceController.m
+The next step will be to implement the controllers in bootstrap.js.
 
 > **NOTE:** Building the WatchKit App interface will use the storyboards and will require the controller headers at compile time. We plan to solve this by providing our own templates that will allow you to focus on the JavaScript.
 
 > **NOTE:** We will try to implement all that work in the CLI so you can start up from here.
 
+For each of the files:
+ - InterfaceController.m
+ - NotificationController.m
+ - GlanceController.m
 
+Go to the "Target Membership" of the file and un-check the "TNSWatchKitApp WatchKit Extension".
+We do not need these classes to compile, will implement these classes in JavaScript, bootstrap.js:
 
+``` JavaScript
+console.log("Hello World!");
 
+var taps = 42;
+var InterfaceController = WKInterfaceController.extend({
+	awakeWithContext: function(context) {
+		this.super.awakeWithContext(context);
+		console.log("InterfaceController: awakeWithContext");
+	},
+	willActivate: function() {
+		this.super.willActivate();
+		console.log("InterfaceController: willActivate");
+	},
+	didDeactivate: function() {
+		this.super.didDeactivate();
+		console.log("InterfaceController: didDeactivate");
+    },
+    tapIncrement: function() {
+    	console.log("Here!");
+        taps++;
+        this._tapsLabel.setText("Taps: " + taps);
+    },
+    tapsLabel: function() {
+        return this._tapsLabel;
+    },
+    "setTapsLabel:": function(value) {
+        this._tapsLabel = value;
+        console.log("Set laber: " + value);
+    }
+}, {
+    name: "InterfaceController",
+    exposedMethods: {
+    	tapIncrement: { returns: interop.types.void, params: [] },
+        tapsLabel: { returns: interop.types.id, params: [] },
+        "setTapsLabel:": { returns: interop.types.void, params: [interop.types.id] }
+    }
+});
 
+var NotificationController = WKUserNotificationInterfaceController.extend({
+	willActivate: function() {
+		this.super.willActivate();
+		console.log("NotificationController: willActivate");
+	},
+	didDeactivate: function() {
+		this.super.didDeactivate();
+		console.log("NotificationController: didDeactivate");
+	}
+}, {
+	name: "NotificationController"
+});
 
+var GlanceController = WKInterfaceController.extend({
+	awakeWithContext: function(context) {
+		this.super.awakeWithContext(context);
+		console.log("GlanceController: awakeWithContext");
+	},
+	willActivate: function() {
+		this.super.willActivate();
+		console.log("GlanceController: willActivate");
+	},
+	didDeactivate: function() {
+		this.super.didDeactivate();
+		console.log("GlanceController: didDeactivate");
+	}
+}, {
+	name: "GlanceController"
+});
 
+console.log("declared controllers");
+```
 
+As you have seend we have the _tapIncrement_, _tapsLabel_ and _setTapsLabel:_ methods in the InterfaceController.
+They will handle basic interaction.
 
+To make the button fire the tapIncrement and export the label in the "tapsLabel" property in the interface builder (IB) you will have to include the "InterfaceController.m" back in the _TNSWatchKitApp WatchKit Extension_ target.
 
+![InterfaceControllerTargetMembership](screenshots/InterfaceControllerTargetMembership.png)
 
+Then show the "Assistent Editor" and drag the buttons's "Sent Actions" and label's "Referencing Outlets" in the InterfaceController.m to generate the stubs:
 
+![AddButtonAction](screenshots/AddButtonAction.png)
 
+![AddLabelReferencing](screenshots/AddLabelReferencing.png)
 
+Then uncheck the "InterfaceController.m" again, build and run.
 
-
-
-
-
+> **NOTE:** Having to add the .m files when you work with the IB and remove them during compilation is boring and tricky but we will try to provide autmated assistance with templates, custom markup or even generate these manually from by examining your JavaScript.
 

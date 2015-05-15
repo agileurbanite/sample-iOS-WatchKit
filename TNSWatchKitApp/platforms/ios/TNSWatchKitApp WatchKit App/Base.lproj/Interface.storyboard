@@ -11,8 +11,15 @@
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
                         <label width="136" alignment="left" text="Taps: 42" id="CgL-Kz-oOx"/>
-                        <button width="1" alignment="left" title="Tap ++" id="CBh-5s-VSN"/>
+                        <button width="1" alignment="left" title="Tap ++" id="CBh-5s-VSN">
+                            <connections>
+                                <action selector="tapIncrement" destination="AgC-eL-Hgc" id="B96-GU-X0H"/>
+                            </connections>
+                        </button>
                     </items>
+                    <connections>
+                        <outlet property="tapsLabel" destination="CgL-Kz-oOx" id="r73-Tp-NQW"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="235" y="347"/>
@@ -22,8 +29,16 @@
             <objects>
                 <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController">
                     <items>
-                        <group alignment="left" id="t8f-Gd-c4y"/>
-                        <group alignment="left" id="uCw-4Q-Ouw"/>
+                        <group alignment="left" id="t8f-Gd-c4y">
+                            <items>
+                                <label alignment="left" text="Label Yes" id="sEl-Ht-AAd"/>
+                            </items>
+                        </group>
+                        <group alignment="left" id="uCw-4Q-Ouw">
+                            <items>
+                                <label alignment="left" text="Hello World" id="l1d-QA-B5i"/>
+                            </items>
+                        </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
                 </glanceController>
@@ -37,7 +52,7 @@
                     <items>
                         <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
                     </items>
-                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <notificationCategory key="notificationCategory" id="JfB-70-Muf"/>
                     <connections>
                         <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
                         <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>

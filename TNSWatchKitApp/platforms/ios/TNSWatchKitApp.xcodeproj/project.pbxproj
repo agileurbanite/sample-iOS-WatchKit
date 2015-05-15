@@ -34,9 +34,6 @@
 		E0B20F7619A3312900D531CF /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B20F6119A3312900D531CF /* Icon-Small@2x.png */; };
 		E0B20F7719A3312900D531CF /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B20F6219A3312900D531CF /* icon.png */; };
 		E0B20F7819A3312900D531CF /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0B20F6319A3312900D531CF /* icon@2x.png */; };
-		F90631331B04B4B400B50CED /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = F90631321B04B4B400B50CED /* InterfaceController.m */; };
-		F90631361B04B4B400B50CED /* NotificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F90631351B04B4B400B50CED /* NotificationController.m */; };
-		F90631391B04B4B400B50CED /* GlanceController.m in Sources */ = {isa = PBXBuildFile; fileRef = F90631381B04B4B400B50CED /* GlanceController.m */; };
 		F906313B1B04B4B400B50CED /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F906313A1B04B4B400B50CED /* Images.xcassets */; };
 		F906313F1B04B4B400B50CED /* TNSWatchKitApp WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = F906313E1B04B4B400B50CED /* TNSWatchKitApp WatchKit App.app */; };
 		F90631471B04B4B400B50CED /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F90631451B04B4B400B50CED /* Interface.storyboard */; };
@@ -46,12 +43,12 @@
 		F90631561B04D2F500B50CED /* NativeScript.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F90631541B04D2F500B50CED /* NativeScript.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F90631581B04D30000B50CED /* NativeScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F90631541B04D2F500B50CED /* NativeScript.framework */; };
 		F90631591B04D30000B50CED /* NativeScript.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F90631541B04D2F500B50CED /* NativeScript.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F906315D1B04D68A00B50CED /* app in Resources */ = {isa = PBXBuildFile; fileRef = F906315C1B04D68A00B50CED /* app */; };
-		F90631601B04DC9300B50CED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F906315E1B04D79000B50CED /* main.m */; };
 		F9161D911993C00300F9E5FD /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F9161D901993C00300F9E5FD /* libc++.dylib */; };
 		F9161D931993C00B00F9E5FD /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F9161D921993C00B00F9E5FD /* libz.dylib */; };
 		F9161D951993C01600F9E5FD /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F9161D941993C01600F9E5FD /* libicucore.dylib */; };
 		F9411C5B1993BE3A000B92E2 /* NativeScript.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9411C5A1993BE3A000B92E2 /* NativeScript.framework */; };
+		F943E9A61B05D12D00B28519 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F906315E1B04D79000B50CED /* main.m */; };
+		F943E9B01B05DC5300B28519 /* app in Resources */ = {isa = PBXBuildFile; fileRef = F943E9AF1B05DC5300B28519 /* app */; };
 		F9B8C6A41ACEDEEB00547416 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9B8C6A21ACEDEEB00547416 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
@@ -145,23 +142,23 @@
 		F906312F1B04B4B400B50CED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F90631301B04B4B400B50CED /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		F90631311B04B4B400B50CED /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
-		F90631321B04B4B400B50CED /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
 		F90631341B04B4B400B50CED /* NotificationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationController.h; sourceTree = "<group>"; };
-		F90631351B04B4B400B50CED /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
 		F90631371B04B4B400B50CED /* GlanceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlanceController.h; sourceTree = "<group>"; };
-		F90631381B04B4B400B50CED /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
 		F906313A1B04B4B400B50CED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F906313E1B04B4B400B50CED /* TNSWatchKitApp WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TNSWatchKitApp WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F90631441B04B4B400B50CED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F90631461B04B4B400B50CED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		F90631481B04B4B400B50CED /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F90631541B04D2F500B50CED /* NativeScript.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NativeScript.framework; path = ../../deps/NativeScript.framework; sourceTree = "<group>"; };
-		F906315C1B04D68A00B50CED /* app */ = {isa = PBXFileReference; lastKnownFileType = folder; name = app; path = "TNSWatchKitApp WatchKit App/app"; sourceTree = SOURCE_ROOT; };
 		F906315E1B04D79000B50CED /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "TNSWatchKitApp WatchKit Extension/main.m"; sourceTree = SOURCE_ROOT; };
 		F9161D901993C00300F9E5FD /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		F9161D921993C00B00F9E5FD /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		F9161D941993C01600F9E5FD /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		F9411C5A1993BE3A000B92E2 /* NativeScript.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = NativeScript.framework; sourceTree = "<group>"; };
+		F943E9A71B05D53300B28519 /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		F943E9AD1B05DB6000B28519 /* GlanceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlanceController.m; sourceTree = "<group>"; };
+		F943E9AE1B05DB6C00B28519 /* NotificationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationController.m; sourceTree = "<group>"; };
+		F943E9AF1B05DC5300B28519 /* app */ = {isa = PBXFileReference; lastKnownFileType = folder; path = app; sourceTree = "<group>"; };
 		F9B8C6A31ACEDEEB00547416 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -274,13 +271,13 @@
 		F906312D1B04B4B400B50CED /* TNSWatchKitApp WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				F906315C1B04D68A00B50CED /* app */,
+				F943E9AF1B05DC5300B28519 /* app */,
 				F90631311B04B4B400B50CED /* InterfaceController.h */,
-				F90631321B04B4B400B50CED /* InterfaceController.m */,
+				F943E9A71B05D53300B28519 /* InterfaceController.m */,
 				F90631341B04B4B400B50CED /* NotificationController.h */,
-				F90631351B04B4B400B50CED /* NotificationController.m */,
+				F943E9AE1B05DB6C00B28519 /* NotificationController.m */,
 				F90631371B04B4B400B50CED /* GlanceController.h */,
-				F90631381B04B4B400B50CED /* GlanceController.m */,
+				F943E9AD1B05DB6000B28519 /* GlanceController.m */,
 				F906313A1B04B4B400B50CED /* Images.xcassets */,
 				F906312E1B04B4B400B50CED /* Supporting Files */,
 			);
@@ -450,7 +447,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F906315D1B04D68A00B50CED /* app in Resources */,
+				F943E9B01B05DC5300B28519 /* app in Resources */,
 				F906313B1B04B4B400B50CED /* Images.xcassets in Resources */,
 				F906313F1B04B4B400B50CED /* TNSWatchKitApp WatchKit App.app in Resources */,
 			);
@@ -523,10 +520,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F90631361B04B4B400B50CED /* NotificationController.m in Sources */,
-				F90631331B04B4B400B50CED /* InterfaceController.m in Sources */,
-				F90631601B04DC9300B50CED /* main.m in Sources */,
-				F90631391B04B4B400B50CED /* GlanceController.m in Sources */,
+				F943E9A61B05D12D00B28519 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

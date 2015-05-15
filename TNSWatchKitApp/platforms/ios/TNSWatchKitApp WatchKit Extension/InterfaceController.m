@@ -9,6 +9,7 @@
 #import "InterfaceController.h"
 
 @interface InterfaceController()
+@property (strong, nonatomic) IBOutlet WKInterfaceLabel *tapsLabel;
 
 @end
 
@@ -29,6 +30,10 @@
     // This method is called when watch view controller is no longer visible
     [super didDeactivate];
 }
+
+- (IBAction)tapIncrement {
+}
+
 
 @end
 
