@@ -27,7 +27,7 @@ Click on the TNSWathcKitApp to open the targets and set the deployment targets t
 > **NOTE:** This may change in future. I have the iOS8.3 SDK and my Xcode generates the WatchKit App extensions with deployment target set to iOS8.3.
 
 ##### Set Bundle Versions
-I had CFBundleVersion missmatch in the Info.plist files in:
+I had CFBundleVersion mismatch in the Info.plist files in:
  - `TNSWathcKitApp WatchKit Extension > Supporting Files > Info.plist > ` (was '1.0')
  - `TNSWatchKitApp WatchKit App > Supporting Files > Info.plist > Bundle version` (was '1')
 
@@ -47,13 +47,13 @@ From the widgets menu drag a label and a button on the small clock the "Main" ar
 Note that you have `WatchKit Extension` and `WatchKit App` pair. The _App_ is deployed on the watch and has storyboards describing the UI. The _Extension_ will be executed on the phone and will handle input and changes. [There is a nice overview of the framework in the apple's documentation](https://developer.apple.com/library/ios/documentation/General/Conceptual/WatchKitProgrammingGuide/DesigningaWatchKitApp.html#//apple_ref/doc/uid/TP40014969-CH3-SW1).
 
 ### Replace the Static NativeScript.framework with the Shared NativeScript.framework
-> **NOTE:** We plan to distribute the NativeScriptEmbedded.framework in "tns-ios" in a "NativeScriptEmbedded/" folder of sort.
+> **NOTE:** We plan to distribute the shared NativeScript.framework in "tns-ios" in a "NativeScriptEmbedded/" folder of sort.
 
-Open the `Targets > TNSWatchKitApp > Build Phases > Link Binary With Libraryes` and remove the static _NativeScript.framework_ from there.
+Open the `Targets > TNSWatchKitApp > Build Phases > Link Binary With Libraries` and remove the static _NativeScript.framework_ from there.
 
 Then from the _NativeScriptEmbedded_ folder add the shared _NativeScript.framework_ to:
  - `Targets > TNSWatchKitApp > General > Embedded Binaries`
- - `Targets > TNSWatchKitApp WatchKit Extension > `
+ - `Targets > TNSWatchKitApp WatchKit Extension > Embedded Binaries`
 
 ### Add Metadata in the Extension
 You also have to add metadata in the Extension to support the Objective-C APIs in JavaScript. You need to copy the metadata build phase from the app.
@@ -122,20 +122,20 @@ console.log("Hello World!");
 
 var taps = 42;
 var InterfaceController = WKInterfaceController.extend({
-	awakeWithContext: function(context) {
-		this.super.awakeWithContext(context);
-		console.log("InterfaceController: awakeWithContext");
-	},
-	willActivate: function() {
-		this.super.willActivate();
-		console.log("InterfaceController: willActivate");
-	},
-	didDeactivate: function() {
-		this.super.didDeactivate();
-		console.log("InterfaceController: didDeactivate");
+    awakeWithContext: function(context) {
+        this.super.awakeWithContext(context);
+        console.log("InterfaceController: awakeWithContext");
+    },
+    willActivate: function() {
+        this.super.willActivate();
+        console.log("InterfaceController: willActivate");
+    },
+    didDeactivate: function() {
+        this.super.didDeactivate();
+        console.log("InterfaceController: didDeactivate");
     },
     tapIncrement: function() {
-    	console.log("Here!");
+        console.log("Here!");
         taps++;
         this._tapsLabel.setText("Taps: " + taps);
     },
@@ -144,51 +144,51 @@ var InterfaceController = WKInterfaceController.extend({
     },
     "setTapsLabel:": function(value) {
         this._tapsLabel = value;
-        console.log("Set laber: " + value);
+        console.log("Set label: " + value);
     }
 }, {
     name: "InterfaceController",
     exposedMethods: {
-    	tapIncrement: { returns: interop.types.void, params: [] },
+        tapIncrement: { returns: interop.types.void, params: [] },
         tapsLabel: { returns: interop.types.id, params: [] },
         "setTapsLabel:": { returns: interop.types.void, params: [interop.types.id] }
     }
 });
 
 var NotificationController = WKUserNotificationInterfaceController.extend({
-	willActivate: function() {
-		this.super.willActivate();
-		console.log("NotificationController: willActivate");
-	},
-	didDeactivate: function() {
-		this.super.didDeactivate();
-		console.log("NotificationController: didDeactivate");
-	}
+    willActivate: function() {
+        this.super.willActivate();
+        console.log("NotificationController: willActivate");
+    },
+    didDeactivate: function() {
+        this.super.didDeactivate();
+        console.log("NotificationController: didDeactivate");
+    }
 }, {
-	name: "NotificationController"
+    name: "NotificationController"
 });
 
 var GlanceController = WKInterfaceController.extend({
-	awakeWithContext: function(context) {
-		this.super.awakeWithContext(context);
-		console.log("GlanceController: awakeWithContext");
-	},
-	willActivate: function() {
-		this.super.willActivate();
-		console.log("GlanceController: willActivate");
-	},
-	didDeactivate: function() {
-		this.super.didDeactivate();
-		console.log("GlanceController: didDeactivate");
-	}
+    awakeWithContext: function(context) {
+        this.super.awakeWithContext(context);
+        console.log("GlanceController: awakeWithContext");
+    },
+    willActivate: function() {
+        this.super.willActivate();
+        console.log("GlanceController: willActivate");
+    },
+    didDeactivate: function() {
+        this.super.didDeactivate();
+        console.log("GlanceController: didDeactivate");
+    }
 }, {
-	name: "GlanceController"
+    name: "GlanceController"
 });
 
 console.log("declared controllers");
 ```
 
-As you have seend we have the _tapIncrement_, _tapsLabel_ and _setTapsLabel:_ methods in the InterfaceController.
+As you have seen we have the _tapIncrement_, _tapsLabel_ and _setTapsLabel:_ methods in the InterfaceController.
 They will handle basic interaction.
 
 To make the button fire the tapIncrement and export the label in the "tapsLabel" property in the interface builder (IB) you will have to include the "InterfaceController.m" back in the _TNSWatchKitApp WatchKit Extension_ target.
@@ -203,5 +203,4 @@ Then show the "Assistent Editor" and drag the buttons's "Sent Actions" and label
 
 Then uncheck the "InterfaceController.m" again, build and run.
 
-> **NOTE:** Having to add the .m files when you work with the IB and remove them during compilation is boring and tricky but we will try to provide autmated assistance with templates, custom markup or even generate these manually from by examining your JavaScript.
-
+> **NOTE:** Having to add the .m files when you work with the IB and remove them during compilation is boring and tricky but we will try to provide automated assistance with templates, custom markup or even generate these manually from by examining your JavaScript.
