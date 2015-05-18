@@ -24,7 +24,7 @@ var InterfaceController = WKInterfaceController.extend({
     },
     "setTapsLabel:": function(value) {
         this._tapsLabel = value;
-        console.log("Set laber: " + value);
+        console.log("Set label: " + value);
     }
 }, {
     name: "InterfaceController",
